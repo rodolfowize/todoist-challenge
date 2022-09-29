@@ -5,8 +5,9 @@ import com.wizeline.page.object.model.LoginPage;
 import com.wizeline.page.object.model.TodayPage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Feature("Login Tests")
@@ -28,7 +29,7 @@ public class LoginTest extends BaseTest{
         homePage.clickOnLoginLink();
         loginPage.doLogin(username, password);
         driverActions.waitForElementToBeVisible(todayPage.getAddTaskButton());
-        Assert.assertEquals("Add task" , todayPage.getAddTaskButton().getText());
+        Assertions.assertEquals("Add task" , todayPage.getAddTaskButton().getText());
     }
 
     @Test
@@ -38,7 +39,7 @@ public class LoginTest extends BaseTest{
         homePage.clickOnLoginLink();
         loginPage.doLogin("invalidUser@g.com", password);
         driverActions.waitForElementToBeVisible(loginPage.getWrongUserNamePasswordMsg());
-        Assert.assertEquals("Wrong email or password.", loginPage.getWrongUserNamePasswordMsg().getText());
+        Assertions.assertEquals("Wrong email or password.", loginPage.getWrongUserNamePasswordMsg().getText());
     }
 
     @Test
@@ -48,7 +49,7 @@ public class LoginTest extends BaseTest{
         homePage.clickOnLoginLink();
         loginPage.doLogin("", password);
         driverActions.waitForElementToBeVisible(loginPage.getInvalidEmailMsg());
-        Assert.assertEquals("Please enter a valid email address.", loginPage.getInvalidEmailMsg().getText());
+        Assertions.assertEquals("Please enter a valid email address.", loginPage.getInvalidEmailMsg().getText());
     }
 
     @Test
@@ -58,7 +59,7 @@ public class LoginTest extends BaseTest{
         homePage.clickOnLoginLink();
         loginPage.doLogin(username, "password");
         driverActions.waitForElementToBeVisible(loginPage.getWrongUserNamePasswordMsg());
-        Assert.assertEquals("Wrong email or password.", loginPage.getWrongUserNamePasswordMsg().getText());
+        Assertions.assertEquals("Wrong email or password.", loginPage.getWrongUserNamePasswordMsg().getText());
     }
 
     @Test
@@ -68,7 +69,7 @@ public class LoginTest extends BaseTest{
         homePage.clickOnLoginLink();
         loginPage.doLogin(username, "");
         driverActions.waitForElementToBeVisible(loginPage.getInvalidPasswordMsg());
-        Assert.assertEquals("Passwords must be at least 8 characters long.", loginPage.getInvalidPasswordMsg().getText());
+        Assertions.assertEquals("Passwords must be at least 8 characters long.", loginPage.getInvalidPasswordMsg().getText());
     }
 
 }

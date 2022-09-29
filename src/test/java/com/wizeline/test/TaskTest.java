@@ -6,8 +6,8 @@ import com.wizeline.page.object.model.TodayPage;
 import com.wizeline.utils.RandomUtils;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Feature("Task tests")
@@ -33,8 +33,8 @@ public class TaskTest extends BaseTest{
         String taskName = RandomUtils.generateRandomString(10);
         String taskDescription = RandomUtils.generateRandomString(80);
         todayPage.addNewTask(taskName, taskDescription);
-        Assert.assertEquals(taskName, todayPage.getNewTaskName().getText());
-        Assert.assertEquals(taskDescription, todayPage.getNewTaskDescription().getText());
+        Assertions.assertEquals(taskName, todayPage.getNewTaskName().getText());
+        Assertions.assertEquals(taskDescription, todayPage.getNewTaskDescription().getText());
 
     }
 
@@ -52,8 +52,8 @@ public class TaskTest extends BaseTest{
             String taskName = RandomUtils.generateRandomString(10);
             String taskDescription = RandomUtils.generateRandomString(80);
             todayPage.addNewTask(taskName, taskDescription);
-            Assert.assertEquals(taskName, todayPage.getNewTaskName().getText());
-            Assert.assertEquals(taskDescription, todayPage.getNewTaskDescription().getText());
+            Assertions.assertEquals(taskName, todayPage.getNewTaskName().getText());
+            Assertions.assertEquals(taskDescription, todayPage.getNewTaskDescription().getText());
         }
     }
 }

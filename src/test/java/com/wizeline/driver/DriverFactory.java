@@ -14,8 +14,6 @@ import org.springframework.stereotype.Component;
 
 import java.net.MalformedURLException;
 import java.net.URI;
-import java.util.HashMap;
-import java.util.Map;
 
 @Component
 public class DriverFactory {
@@ -31,7 +29,7 @@ public class DriverFactory {
             remoteWebDriver.manage().window().maximize();
             return remoteWebDriver;
         }
-        System.out.println();
+
         switch (browser){
             case CHROME: {
                 System.setProperty("webdriver.chrome.driver", environment.getProperty("chrome.driver"));
