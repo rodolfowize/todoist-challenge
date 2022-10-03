@@ -14,7 +14,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <selenium.version>4.4.0</selenium.version>
         <spring.version>5.1.6.RELEASE</spring.version>
-<!--        <allure.junit4.version>2.14.0</allure.junit4.version>-->
         <allure-maven.version>2.10.0</allure-maven.version>
         <maven.compiler.plugin.version>3.5.1</maven.compiler.plugin.version>
         <aspectj.version>1.9.6</aspectj.version>
@@ -48,18 +47,6 @@
             <version>5.9.1</version>
             <scope>test</scope>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>junit</groupId>-->
-<!--            <artifactId>junit</artifactId>-->
-<!--            <version>4.13.2</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.qameta.allure</groupId>-->
-<!--            <artifactId>allure-junit4</artifactId>-->
-<!--            <version>${allure.junit4.version}</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit5</artifactId>
@@ -83,21 +70,6 @@
             <version>${junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.junit.platform</groupId>-->
-<!--            <artifactId>junit-platform-engine</artifactId>-->
-<!--            <version>${junit.platform.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.junit.platform</groupId>-->
-<!--            <artifactId>junit-platform-launcher</artifactId>-->
-<!--            <version>${junit.platform.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.junit.platform</groupId>-->
-<!--            <artifactId>junit-platform-runner</artifactId>-->
-<!--            <version>${junit.platform.version}</version>-->
-<!--        </dependency>-->
     </dependencies>
 
     <build>
@@ -109,8 +81,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.compiler.plugin.version}</version>
                 <configuration>
-                    <source>${maven.compiler.source}</source> <!--For JAVA 8 use 1.8-->
-                    <target>${maven.compiler.target}</target> <!--For JAVA 8 use 1.8-->
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
 
@@ -139,12 +111,6 @@
                             <name>listener</name>
                             <value>io.qameta.allure.junit5.AllureJunit5</value>
                         </property>
-                        <configurationParameters>
-                            junit.jupiter.execution.parallel.enabled=true
-                            junit.jupiter.execution.parallel.config.strategy=fixed
-                            junit.jupiter.execution.parallel.config.fixed.parallelism=5
-                            junit.jupiter.execution.parallel.mode.default=concurrent
-                        </configurationParameters>
                     </properties>
                 </configuration>
                 <dependencies>
