@@ -3,32 +3,18 @@ package com.wizeline.driver;
 import com.wizeline.enums.Browser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
-
-import java.net.MalformedURLException;
-import java.net.URI;
 
 @Component
 public class DriverFactory {
 
     @Value("${grid.url}")
     private String gridUrl;
-    @Value("${remote.execution}")
-    private boolean isRemoteExecution;
 
     public WebDriver get(Browser browser, Environment environment) {
-        if(isRemoteExecution){
-            RemoteWebDriver remoteWebDriver = getRemoteWebDriver(browser);
-            remoteWebDriver.manage().window().maximize();
-            return remoteWebDriver;
-        }
 
         switch (browser){
             case CHROME: {
@@ -45,24 +31,6 @@ public class DriverFactory {
             default: throw new IllegalArgumentException("Browser not supported");
 
         }
-    }
-
-    private RemoteWebDriver getRemoteWebDriver(Browser browser) {
-        try{
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability(CapabilityType.BROWSER_NAME,browser.name().toLowerCase());
-            switch (browser){
-                case CHROME: {
-                    ChromeOptions options = new ChromeOptions();
-                    capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-                    break;
-                }
-            }
-            return new RemoteWebDriver(URI.create(gridUrl).toURL(), capabilities);
-        }catch (MalformedURLException mu){
-            System.err.println("Malformed Exception thrown at Remote Web Driver creation:  " + mu.getStackTrace());
-        }
-        return null;
     }
 
 }
