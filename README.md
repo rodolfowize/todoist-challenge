@@ -16,23 +16,23 @@ It is comprised of one single (testplan.jmx) test plan including 30 tests betwee
   * Delete a project: invalid project
 
 - Task:
- * Get active task
- * Get an active task
- * Get an active task: not found
- * Get an active task: invalid task
- * Create a new task
- * Create a new task: missing mandatory request parameter
- * Create a new task: wrong parameter type
- * Delete a task
- * Delete a task: invalid task
- * Update a task
- * Update a task: not found
- * Update a task: invalid task
- * Close a task
- * Close a task: not found
- * Close a task: invalid task
- * Reopen a task
- * Reopen a task: not found
+  * Get active task
+  * Get an active task
+  * Get an active task: not found
+  * Get an active task: invalid task
+  * Create a new task
+  * Create a new task: missing mandatory request parameter
+  * Create a new task: wrong parameter type
+  * Delete a task
+  * Delete a task: invalid task
+  * Update a task
+  * Update a task: not found
+  * Update a task: invalid task
+  * Close a task
+  * Close a task: not found
+  * Close a task: invalid task
+  * Reopen a task
+  * Reopen a task: not found
  * Reopen a task: invalid task
  * Wrong bearer token
 
