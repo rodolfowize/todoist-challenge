@@ -4,15 +4,15 @@ In regards to browser support, it currently is setup to work with Chrome nad Saf
 The app covers the validations of different positive and negative scenarios for logging in into the app and creating new tasks in an already existent project, making up a total of 7 automated tests:
 
 - Login
- * successfulLoginTest
- * nonExistentUsernameLoginTest
- * noUsernameLoginTest
- * wrongPasswordLoginTest
- * noPasswordLoginTest
+   * successfulLoginTest
+   * nonExistentUsernameLoginTest
+   * noUsernameLoginTest
+   * wrongPasswordLoginTest
+   * noPasswordLoginTest
 
 - Task
- * createNewTaskTest
- * create10NewTasks
+   * createNewTaskTest
+   * create10NewTasks
 
 The project structure is as follows:
 
