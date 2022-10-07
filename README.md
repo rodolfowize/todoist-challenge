@@ -27,7 +27,7 @@ The project structure is as follows:
 Under the resources folder, you'll find the test.properties file which holds general config values and a directory called drivers, where all the required drivers executable files will be located. 
 
 Each test class in the project (with the exception of the BaseTest class) will represent a test suite which can be executed independently. 
-Parallel execution will be only available through Jenkins, by running a test suite per node/slave.
+Parallel execution will be only available through Jenkins, by running the test suites in different nodes/slaves at the same time.
 
 The test application takes advantage of the Dependency Injection and bean lifecycle management that Spring offers, so the creation and destruction of the java objects is handled by Spring itself. It also makes use of the @Value annotation to read values from the properties files. 
 
