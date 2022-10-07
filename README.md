@@ -33,7 +33,7 @@ It is comprised of one single (testplan.jmx) test plan including 30 tests betwee
   * Close a task: invalid task
   * Reopen a task
   * Reopen a task: not found
- * Reopen a task: invalid task
- * Wrong bearer token
+  * Reopen a task: invalid task
+  * Wrong bearer token
 
 In order to execute this test suite, you require to have Jmeter setup locally in the machine or server where you plan to run it from.
