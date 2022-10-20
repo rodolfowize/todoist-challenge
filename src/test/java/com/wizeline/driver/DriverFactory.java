@@ -4,15 +4,11 @@ import com.wizeline.enums.Browser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.safari.SafariDriver;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
 @Component
 public class DriverFactory {
-
-    @Value("${grid.url}")
-    private String gridUrl;
 
     public WebDriver get(Browser browser, Environment environment) {
 
